@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Evaluating paralinguistic-aware speech generation">
+  <meta name="keywords" content="SpeechParaling-Bench, SpeechParaling Bench">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> SpeechParaling-Bench: Evaluating Paralinguistic-Aware Speech Generation</title>
+
+  <link rel="icon" href="./static/images/icon.png">
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/leaderboard.css">
+  <link rel="stylesheet" href="./static/css/example-container.css">
+  <script type="text/javascript" src="static/js/sort-table.js" defer></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/explorer-index.js"></script>
+
+  <script src="./static/js/leaderboard_testmini.js"></script>  
+  <script src="./static/js/example-shower.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body pb-0">
+  <!-- <div class="hero-body"> -->
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title is-bold">
+            <img src="static/images/icon.png" style="height:1.2em;vertical-align: middle" alt="Logo"/>
+            <span class="textsc" style="vertical-align: middle">SpeechParaling-Bench</span>
+            </h1>
+          <h2 class="subtitle is-3 publication-subtitle">
+            Evaluating Speech-Aware Speech Generation in <br> Real-World Scenarios
+          </h2>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://github.com/Northern-byte-bit">Ruohan Liu</a><sup style="color:#6fbf73;">1</sup><sup>,*</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=cZmqj_0AAAAJ">Shukang Yin</a><sup>*</sup>,</span>
+            <span class="author-block">
+              <a href="https://github.com/WaveKiin">Tao Wang</a><sup style="color:#6fbf73;">1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://0nutation.github.io/">Dong Zhang</a><sup style="color:#ed4b82">2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://github.com/zhuangweiji">Weiji Zhuang</a><sup style="color:#ed4b82">2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://renshuhuai-andy.github.io/">Shuhuai Ren</a><sup style="color:#ed4b82">2</sup>,
+            </span>
+            <br>
+            <span class="author-block">
+              <a href="https://rhe-web.github.io/">Ran He</a><sup style="color:#ffac33">3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://caifeng-shan.github.io/">Caifeng Shan</a><sup style="color:#6fbf73;">1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com.hk/citations?user=4A1xYQwAAAAJ">Chaoyou Fu</a><sup style="color:#6fbf73;">1</sup><sup>,†</sup>
+            </span>
+          </div>
+          
+          <span class="author-block">
+              <sup>*</sup>Equal Contribution
+          </span>
+          <span class="author-block">
+              <sup>†</sup>Corresponding Author
+          </span>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup style="color:#6fbf73;">1</sup>Nanjing University,</span>
+            <span class="author-block"><sup style="color:#ed4b82">2</sup>Xiaomi,</span>
+            <span class="author-block"><sup style="color:#ffac33">3</sup>Chinese Academy of Sciences</span><br>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <!-- TODO: change links -->
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <!-- TODO: change links -->
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/Northern-byte-bit/SpeechParaling-Bench"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://huggingface.co/Ruohan2/datasets"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <p style="font-size:18px">🤗</p>
+                  </span>
+                  <span>Dataset</span>
+                </a>
+              </span>
+              <!-- Leaderboard Link. -->
+              <span class="link-block">
+                <a href="https://speechparaling-bench.github.io/#leaderboard"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <p style="font-size:18px">🏆</p>
+                  </span>
+                  <span>Leaderboard</span>
+                </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-bottom: 0;">
+  <div class="container" style="margin-bottom: 2vh;">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Introduction</h2>
+        <div class="content has-text-justified">
+          <p>
+            Paralinguistic cues are pivotal to natural human-computer interaction, and state-of-the-art <b>Large Audio-Language Models (LALMs)</b> have demonstrated preliminary advances in speech generation that incorporate paralinguistic features.
+            Yet, evaluation of LALMs in this area remains limited due to the lack of a specialized, comprehensive benchmark. 
+            Existing benchmarks address this aspect but mainly focus on basic dimensions like emotion, gender, and age.
+          </p>
+          <p>
+            To bridge this gap, we introduce <img src="static/images/icon.png" style="height:1.2em;vertical-align: middle" alt="Logo"/>
+            <span class="textsc">SpeechParaling-Bench</span>, a comprehensive benchmark for paralinguistic-aware speech generation.
+            Structured around application-oriented tasks, it comprises <b>over 1,000 English-Chinese parallel speech queries</b> covering <b>more than 100 paralinguistic features</b>.
+            Unlike previous approaches that rely on costly human evaluation or specialized models (e.g., speech or emotion recognition models), which may suffer from information loss, we employ an LALM-based judge.
+          </p> 
+          <p>
+            Extensive evaluations on state-of-the-art LALMs reveal that <b>even leading proprietary models struggle with multilingual paralinguistic mastery</b>, 
+            and that <b>the failure to grasp paralinguistic cues is a critical bottleneck</b>, accounting for <b>43.3%</b> of errors in situational dialogues.
+            These findings highlight challenges in developing voice assistants that align with human speech.
+          </p> 
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+</div>
+</section>
+
+<section class="section">
+  <div class="container">
+    
+    <div class="columns is-centered">
+      <div class="column is-full has-text-centered content">
+        
+        <h2 class="title is-3" id="leaderboard">Leaderboard (Chinese)</h2>
+        <div class="content">
+          <p class="mt-3">Normalized scores (0-100) on the <b>Chinese</b> subset <img src="static/images/icon.png" style="height:1.2em;vertical-align: middle" alt="Logo"/>
+            <span class="textsc">SpeechParaling-Bench</span>.
+          </p>
+          
+          <table class="js-sort-table" id="results">
+            <tr>
+                <td class="js-sort-number"><strong>#</strong></td>
+                <td class="js-sort-number"><strong>Model</strong></td>
+                <td class="js-sort-number"><strong>Date</strong></td>
+                <td class="js-sort-number"><strong><u>Overall</u></strong></td>
+                <td class="js-sort-number"><strong>Para Con</strong></td>
+                <td class="js-sort-number"><strong>Dyn Var</strong></td>
+                <td class="js-sort-number"><strong>Sit Ada</strong></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td><b class="best-score-text"><a href="https://seed.bytedance.com/en/realtime_voice">Doubao Realtime Voice*</a> 🥇</b></td>
+              <td>2025-12-20</td>
+              <td><b class="best-score-text">70.84</b></td>
+              <td>71.86</td>
+              <td>54.09</td>
+              <td>58.21</td>                               
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><b class="best-score-text"><a href="https://platform.openai.com/docs/models/gpt-audio">GPT Audio</a> 🥈</b></td>
+              <td>2025-12-20</td>
+              <td><b class="best-score-text">39.09</b></td>
+              <td>35.57</td>
+              <td>63.33</td>
+              <td>40.18</td>                
+            </tr>
+              <td>3</td>
+              <td><b class="best-score-text"><a href="https://deepmind.google/models/gemini-audio">Gemini Audio</a> 🥉</b></td>
+              <td>2025-12-20</td>
+              <td><b class="best-score-text">28.18</b></td>
+              <td>29.64</td>
+              <td>29.17</td>
+              <td>23.04</td>                            
+            </tr>
+            <tr>
+              <td>4</td>
+              <td><b class=""><a href="https://qwen.ai/blog?id=qwen3-omni-flash-20251201">Qwen3-Omni-Flash</a></b></td>
+              <td>2026-01-01</td>
+              <td><b class="">22.58</b></td>
+              <td>14.16</td>
+              <td>35.00</td>
+              <td>44.64</td>                            
+            </tr>
+            <tr>
+              <td>5</td>
+              <td><b class=""><a href="https://www.alibabacloud.com/help/en/model-studio/realtime">Qwen3-Omni-Realtime</a></b></td>
+              <td>2026-01-12</td>
+              <td><b class="">14.34</b></td>
+              <td>4.72</td>
+              <td>5.83</td>
+              <td>49.29</td>                               
+            </tr>                                                     
+        </table>
+
+        <h2 class="title is-3" id="leaderboard_en">Leaderboard (English)</h2>
+        <div class="content">
+          <p class="mt-3">Normalized scores (0-100) on the <b>English</b> subset of <img src="static/images/icon.png" style="height:1.2em;vertical-align: middle" alt="Logo"/>
+            <span class="textsc">SpeechParaling-Bench</span>.
+          </p>
+
+          <table class="js-sort-table" id="results">
+            <tr>
+                <td class="js-sort-number"><strong>#</strong></td>
+                <td class="js-sort-number"><strong>Model</strong></td>
+                <td class="js-sort-number"><strong>Date</strong></td>
+                <td class="js-sort-number"><strong><u>Overall</u></strong></td>
+                <td class="js-sort-number"><strong>Para Con</strong></td>
+                <td class="js-sort-number"><strong>Dyn Var</strong></td>
+                <td class="js-sort-number"><strong>Sit Ada</strong></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td><b class="best-score-text"><a href="https://deepmind.google/models/gemini-audio">Gemini Audio*</a> 🥇</b></td>
+              <td>2025-12-20</td>
+              <td><b class="best-score-text">64.97</b></td>
+              <td>66.49</td>
+              <td>61.08</td>
+              <td>52.37</td>                               
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><b class="best-score-text"><a href="https://platform.openai.com/docs/models/gpt-audio">GPT Audio</a> 🥈</b></td>
+              <td>2025-12-20</td>
+              <td><b class="best-score-text">49.39</b></td>
+              <td>46.38</td>
+              <td>52.92</td>
+              <td>57.68</td>                
+            </tr>
+              <td>3</td>
+              <td><b class="best-score-text"><a href="https://seed.bytedance.com/en/realtime_voice">Doubao Realtime Voice</a> 🥉</b></td>
+              <td>2025-12-20</td>
+              <td><b class="best-score-text">31.39</b></td>
+              <td>28.05</td>
+              <td>22.50</td>
+              <td>46.07</td>                            
+            </tr>
+            <tr>
+              <td>4</td>
+              <td><b class=""><a href="https://www.alibabacloud.com/help/en/model-studio/realtime">Qwen3-Omni-Realtime</a></b></td>
+              <td>2026-01-01</td>
+              <td><b class="">15.52</b></td>
+              <td>6.75</td>
+              <td>5.00</td>
+              <td>48.57</td>                            
+            </tr>
+            <tr>
+              <td>5</td>
+              <td><b class=""><a href="https://qwen.ai/blog?id=qwen3-omni-flash-20251201">Qwen3-Omni-Flash</a></b></td>
+              <td>2026-01-12</td>
+              <td><b class="">13.73</b></td>
+              <td>12.51</td>
+              <td>7.92</td>
+              <td>20.18</td>                               
+            </tr>                                                     
+        </table>
+
+          <b>Baseline models*:</b> <u>Doubao Realtime Voice</u> and <u>Gemini Audio</u> serve as baseline models for Chinese and English subset, respectively. 
+                  We adopt a pairwise comparison mechanism for scoring, where each candidate model is compared against the baseline.
+                  <u>Gemini-3 Pro</u> is utilized as an LALM-based judge. 
+          <br>
+          <b>Task types:</b> 
+          <b>Para Con:</b> Paralanguage Control,
+          <b>Dyn Var:</b> Dynamic Variation,
+          <b>Sit Ada:</b> Situational Adaptation.
+          <br>
+          <br>
+          <div>
+          <p>🚨 To submit your results to the leaderboard, please send to <a href="mailto:221900134@smail.nju.edu.cn">this email</a> with your result files.</p>
+          <p>🚨 For more evaluation details, please refer to <a href="https://github.com/Northern-byte-bit/SpeechParaling-Bench?tab=readme-ov-file#-quick-start">this link</a>.
+          </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DATASET SECTION -->
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+  <h1 class="title is-1 speechparaling-bench">
+    <img src="static/images/icon.png" style="width:1em;vertical-align: middle" alt="Logo"/>
+    <span class="textsc" style="vertical-align: middle">SpeechParaling-Bench Dataset</span>
+  </h1>
+  </div>
+</section>
+            
+<section class="section" style="padding-bottom: 0;">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <!-- <div class="column is-full-width has-text-centered"> -->
+        <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            <img src="static/images/icon.png" style="height:1.2em;vertical-align: middle" alt="Logo"/>
+            <span class="textsc">SpeechParaling-Bench</span> is a comprehensive paralinguistic-aware speech generation benchmark within
+            real-world interaction contexts. 
+            It consists of <b>three specific tasks: Paralanguage Control, Dynamic Variation, and Situational Adaptation</b>, 
+            which is tailored to evaluate speech generation with paralanguage, dynamic control on paralinguistic features, 
+            and adaptive use of appropriate paralanguage grounded in specific contexts, respectively.
+            It also incorporates <b>13 dimensions</b> and <b>more than 100 features</b>, 
+            comprehensively covering various paralinguistic nuances across different real-life scenarios.
+            In total, <img src="static/images/icon.png" style="height:1.2em;vertical-align: middle" alt="Logo"/>
+            <span class="textsc">SpeechParaling-Bench</span> includes <b>more than 1,000 examples</b> newly curated with our data pipeline.
+          </p>
+
+          <p>
+            All the data samples are divided into two subsets: <strong>Chinese</strong> and <strong>English</strong>. 
+            You can download the dataset on <a href="https://huggingface.co/datasets/Ruohan2" target="_blank">Hugging Face Dataset</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered">
+    <div class="column is-10">
+        <div class="content has-text-centered">
+          <img src="static/images/statistics.png" alt="data-overview" style="max-width: 100%; margin-bottom: 0.5rem;"/>
+          <p> 
+            Key statistics and data composition of <img src="static/images/icon.png" style="height:1.2em;vertical-align: middle" alt="Logo"/>
+            <span class="textsc">SpeechParaling-Bench</span>.<br/>
+            For a full list of paralinguistic dimensions, definitions, and feature ranges, please refer to our paper.
+          </p> 
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="columns is-centered mt-5 mb-6">
+    <!-- <div class="columns is-centered m-6"> -->
+      <div class="column is-full has-text-centered content">
+        <h2 class="title is-3">Examples</h2>
+        <p>We show one representative example for each <b>task types</b> in <img src="static/images/icon.png" style="height:1.2em;vertical-align: middle" alt="Logo"/>
+          <span class="textsc">SpeechParaling-Bench</span></p>
+        
+            <!-- Example Tabs -->
+            <div class="example-tabs">
+                <button class="ex-tab-btn active" data-ex-tab="para-con">
+                    <i class="fas fa-sliders-h"></i> Paralanguage Control
+                </button>
+                <button class="ex-tab-btn" data-ex-tab="dyn-var">
+                    <i class="fas fa-chart-line"></i> Dynamic Variation
+                </button>
+                <button class="ex-tab-btn" data-ex-tab="sit-ada">
+                    <i class="fas fa-theater-masks"></i> Situational Adaptation
+                </button>
+            </div>
+
+            <!-- Example Grid Container -->
+            <div class="examples-container">
+                <!-- Paralanguage Control Examples -->
+                <div class="example-grid active" id="para-con">
+                    <div class="example-card modern">
+                        <div class="ex-badge-row">
+                            <span class="ex-type-badge">Control</span>
+                            <span class="ex-lang-badge"><i class="fas fa-globe-asia"></i> Chinese</span>
+                        </div>
+                        <div class="ex-body">
+                            <div class="ex-label">Prompt</div>
+                            <p class="ex-text">请用青年的声音，抑扬顿挫的节奏，热情地说：欢迎新同学加入我们社团，希望大家玩得开心！</p>
+                            <div class="ex-dimensions-row">
+                                <span class="dim-tag">Age: Youth</span>
+                                <span class="dim-tag">Rhythm: Emphatic</span>
+                                <span class="dim-tag">Attitude: Enthusiastic</span>
+                            </div>
+                            <div class="ex-audio-section">
+                                <div class="audio-player">
+                                    <div class="player-info">
+                                        <i class="fas fa-volume-up"></i>
+                                        <span>Multi-dimensional Control</span>
+                                    </div>
+                                    <audio controls src="static/audio/para-con-zh-1.wav"></audio>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="example-card modern">
+                        <div class="ex-badge-row">
+                            <span class="ex-type-badge">Control</span>
+                            <span class="ex-lang-badge"><i class="fas fa-globe-americas"></i> English</span>
+                        </div>
+                        <div class="ex-body">
+                            <div class="ex-label">Prompt</div>
+                            <p class="ex-text">Please read this sentence with a youthful voice, an emphatic rhythm, and an enthusiastic tone: 'Welcome new students to our club! Hope everyone has a great time!'</p>
+                            <div class="ex-dimensions-row">
+                                <span class="dim-tag">Age: Youth</span>
+                                <span class="dim-tag">Rhythm: Emphatic</span>
+                                <span class="dim-tag">Attitude: Enthusiastic</span>
+                            </div>
+                            <div class="ex-audio-section">
+                                <div class="audio-player">
+                                    <div class="player-info">
+                                        <i class="fas fa-volume-up"></i>
+                                        <span>Multi-dimensional Control</span>
+                                    </div>
+                                    <audio controls src="static/audio/para-con-en-1.wav"></audio>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dynamic Variation Examples -->
+                <div class="example-grid" id="dyn-var">
+                    <div class="example-card modern">
+                        <div class="ex-badge-row">
+                            <span class="ex-type-badge variant">Variation</span>
+                            <span class="ex-lang-badge"><i class="fas fa-globe-asia"></i> Chinese</span>
+                        </div>
+                        <div class="ex-body">
+                            <div class="ex-label">Prompt</div>
+                            <p class="ex-text">请先用极低音开始，然后逐渐转变为中音说: '你看，那是什么？原来是只小猫在草丛里玩耍，真可爱。'</p>
+                            <div class="ex-dimensions-row">
+                                <span class="dim-tag">Feature: Pitch</span>
+                                <span class="dim-tag">Transition: Low → Medium</span>
+                            </div>
+                            <div class="ex-audio-section">
+                                <div class="audio-player">
+                                    <div class="player-info">
+                                        <i class="fas fa-wave-square"></i>
+                                        <span>Dynamic Pitch Shift</span>
+                                    </div>
+                                    <audio controls src="static/audio/dyn-var-zh-1.wav"></audio>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="example-card modern">
+                        <div class="ex-badge-row">
+                            <span class="ex-type-badge variant">Variation</span>
+                            <span class="ex-lang-badge"><i class="fas fa-globe-americas"></i> English</span>
+                        </div>
+                        <div class="ex-body">
+                            <div class="ex-label">Prompt</div>
+                            <p class="ex-text">Please read this sentence starting with a very low pitch and gradually transitioning to a medium pitch: 'Look, what's that? It's just a small cat playing in the grass, so cute.'</p>
+                            <div class="ex-dimensions-row">
+                                <span class="dim-tag">Feature: Pitch</span>
+                                <span class="dim-tag">Transition: Low → Medium</span>
+                            </div>
+                            <div class="ex-audio-section">
+                                <div class="audio-player">
+                                    <div class="player-info">
+                                        <i class="fas fa-wave-square"></i>
+                                        <span>Dynamic Pitch Shift</span>
+                                    </div>
+                                    <audio controls src="static/audio/dyn-var-en-1.wav"></audio>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Situational Adaptation Examples -->
+                <div class="example-grid" id="sit-ada">
+                    <div class="example-card modern">
+                        <div class="ex-badge-row">
+                            <span class="ex-type-badge adaptation">Adaptation</span>
+                            <span class="ex-lang-badge"><i class="fas fa-globe-asia"></i> Chinese</span>
+                        </div>
+                        <div class="ex-body">
+                            <div class="ex-label">Prompt</div>
+                            <p class="ex-text">我不想睡觉，我想看电视，就再看五分钟嘛！</p>
+                            <div class="ex-dimensions-row">
+                                <span class="dim-tag">Age: Child</span>
+                            </div>
+                            <div class="ex-audio-section">
+                                <div class="audio-player">
+                                    <div class="player-info">
+                                        <i class="fas fa-heartbeat"></i>
+                                        <span>Empathetic Generation</span>
+                                    </div>
+                                    <audio controls src="static/audio/sit-ada-zh-1.wav"></audio>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="example-card modern">
+                        <div class="ex-badge-row">
+                            <span class="ex-type-badge adaptation">Adaptation</span>
+                            <span class="ex-lang-badge"><i class="fas fa-globe-americas"></i> English</span>
+                        </div>
+                        <div class="ex-body">
+                            <div class="ex-label">Prompt</div>
+                            <p class="ex-text">I don't want to sleep, I want to watch TV, just five more minutes!</p>
+                            <div class="ex-dimensions-row">
+                                <span class="dim-tag">Age: Child</span>
+                            </div>
+                            <div class="ex-audio-section">
+                                <div class="audio-player">
+                                    <div class="player-info">
+                                        <i class="fas fa-heartbeat"></i>
+                                        <span>Empathetic Generation</span>
+                                    </div>
+                                    <audio controls src="static/audio/sit-ada-en-1.wav"></audio>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        
+        
+      </div>
+    </div>
+    
+    
+  </div>
+</section>
+
+<!-- RESULTS SECTION -->
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-1 speechparaling-bench">Experiment Results</h1>
+  </div>
+</section>
+
+<section class="section pt-5">
+  <div class="container">
+
+    <div class="columns is-centered mt-2">
+    <!-- <div class="columns is-centered m-6"> -->
+      <div class="column is-full has-text-centered content">
+        <h2 class="title is-3">Results on Existing SOTA Models</h2>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/results-figures/overall-perf.png" alt="overall-perf"/>
+              <p>
+                <b>Overall performance comparison of state-of-the-art LALMs.</b> <br>
+                (a) Doubao and Gemini are currently the leading models in Chinese and English, respectively;<br>
+                (b) Multilingual proficiency remains a significant challenge for existing audio assistants.
+            </p>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/results-figures/dim-wise-performance.png" alt="dim-perf" width="70%"/>
+              <p>
+                <b>Dimension-wise performance on Paralanguage Control task (Chinese).</b><br>
+                (a) <b>A well-rounded top-performer is still lacking.</b> For instance, Doubao excels in expressive features (e.g., emotion and attitude) 
+                and acoustic features (e.g., timbre and volume), yet lags in prosodic attributes such as pauses and stress;<br> 
+                (b) Current models generally <b>underperform in abstract, expressive nuances</b>, such as NLV and style.
+            </p>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/results-figures/error-analysis.png" alt="error-analysis" width="50%"/>
+              <p>
+                <b>Manual error analysis of Gemini Audio results (Chinese subset, Situational Adaptation task).</b> <br>
+                Gemini Audio fails on 67 out of 190 samples, of which a substantial portion (43.3%) stems from <br>
+                overlooking paralinguistic information embedded in the user's speech.<br>
+                These results highlight the current gap in capturing paralinguistic nuances beyond mere linguistic content.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+</section>
+
+<section class="section pt-0" id="BibTeX">
+<!-- <section class="section" id="BibTeX"> -->
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3 has-text-centered">BibTeX</h2>
+    <pre><code>@article{speechparaling-bench,
+  author    = {},
+  title     = {SpeechParaling-Bench: A Comprehensive Benchmark for Paralinguistic-Aware Speech Generation},
+  journal   = {arXiv preprint arXiv:},
+  year      = {2026}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is adapted from <a href="https://mathvista.github.io/">MathVista</a> and <a href="https://nerfies.github.io/">Nerfies</a>, licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
