@@ -42,7 +42,7 @@
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title is-bold">
             <img src="static/images/icon.png" style="height:1.2em;vertical-align: middle" alt="Logo"/>
-            <span class="textsc" style="vertical-align: middle">SpeechParaling-Bench</span>
+            SpeechParaling-Bench
             </h1>
           <h2 class="subtitle is-3 publication-subtitle">
             Evaluating Speech-Aware Speech Generation in <br> Real-World Scenarios
@@ -199,9 +199,9 @@
                 <td class="js-sort-number"><strong>Model</strong></td>
                 <td class="js-sort-number"><strong>Date</strong></td>
                 <td class="js-sort-number"><strong><u>Overall</u></strong></td>
-                <td class="js-sort-number"><strong>Para Con</strong></td>
-                <td class="js-sort-number"><strong>Dyn Var</strong></td>
-                <td class="js-sort-number"><strong>Sit Ada</strong></td>
+                <td class="js-sort-number"><strong>Paralanguage Control</strong></td>
+                <td class="js-sort-number"><strong>Dynamic Variation</strong></td>
+                <td class="js-sort-number"><strong>Situational Adaptation</strong></td>
             </tr>
             <tr>
               <td>1</td>
@@ -261,9 +261,9 @@
                 <td class="js-sort-number"><strong>Model</strong></td>
                 <td class="js-sort-number"><strong>Date</strong></td>
                 <td class="js-sort-number"><strong><u>Overall</u></strong></td>
-                <td class="js-sort-number"><strong>Para Con</strong></td>
-                <td class="js-sort-number"><strong>Dyn Var</strong></td>
-                <td class="js-sort-number"><strong>Sit Ada</strong></td>
+                <td class="js-sort-number"><strong>Paralanguage Control</strong></td>
+                <td class="js-sort-number"><strong>Dynamic Variation</strong></td>
+                <td class="js-sort-number"><strong>Situational Adaptation</strong></td>
             </tr>
             <tr>
               <td>1</td>
@@ -314,11 +314,6 @@
           <b>Baseline models*:</b> <u>Doubao Realtime Voice</u> and <u>Gemini Audio</u> serve as baseline models for Chinese and English subset, respectively. 
                   We adopt a pairwise comparison mechanism for scoring, where each candidate model is compared against the baseline.
                   <u>Gemini-3 Pro</u> is utilized as an LALM-based judge. 
-          <br>
-          <b>Task types:</b> 
-          <b>Para Con:</b> Paralanguage Control,
-          <b>Dyn Var:</b> Dynamic Variation,
-          <b>Sit Ada:</b> Situational Adaptation.
           <br>
           <br>
           <div>
@@ -584,15 +579,15 @@
     <div class="columns is-centered mt-2">
     <!-- <div class="columns is-centered m-6"> -->
       <div class="column is-full has-text-centered content">
-        <h2 class="title is-3">Results on Existing SOTA Models</h2>
+        <h2 class="title is-3">Results and Findings</h2>
         <div id="results-carousel" class="carousel results-carousel">
           <div class="box m-5">
             <div class="content has-text-centered">
               <img src="static/images/results-figures/overall-perf.png" alt="overall-perf"/>
               <p>
                 <b>Overall performance comparison of state-of-the-art LALMs.</b> <br>
-                (a) Doubao and Gemini are currently the leading models in Chinese and English, respectively;<br>
-                (b) Multilingual proficiency remains a significant challenge for existing audio assistants.
+                (a) Currently, <b>Doubao and Gemini are the leading models</b> in Chinese and English, respectively;<br>
+                (b) <b>Multilingual proficiency remains a significant challenge</b> for existing audio assistants.
             </p>
             </div>
           </div>
@@ -601,9 +596,9 @@
               <img src="static/images/results-figures/dim-wise-performance.png" alt="dim-perf" width="70%"/>
               <p>
                 <b>Dimension-wise performance on Paralanguage Control task (Chinese).</b><br>
-                (a) <b>A well-rounded top-performer is still lacking.</b> For instance, Doubao excels in expressive features (e.g., emotion and attitude) 
-                and acoustic features (e.g., timbre and volume), yet lags in prosodic attributes such as pauses and stress;<br> 
-                (b) Current models generally <b>underperform in abstract, expressive nuances</b>, such as NLV and style.
+                (a) <b>A well-rounded top-performer is still lacking.</b><br> For instance, Doubao excels in expressive features (e.g., emotion and attitude) 
+                and acoustic features (e.g., timbre and volume), <br>yet lags in prosodic attributes such as pauses and stress;<br> 
+                (b) Current models <b>generally underperform in abstract, expressive nuances</b>, such as NLV and style.
             </p>
             </div>
           </div>
@@ -611,9 +606,9 @@
             <div class="content has-text-centered">
               <img src="static/images/results-figures/error-analysis.png" alt="error-analysis" width="50%"/>
               <p>
-                <b>Manual error analysis of Gemini Audio results (Chinese subset, Situational Adaptation task).</b> <br>
-                Gemini Audio fails on 67 out of 190 samples, of which a substantial portion (43.3%) stems from <br>
-                overlooking paralinguistic information embedded in the user's speech.<br>
+                <b>Manual error pattern analysis of Gemini Audio.</b> <br>
+                In Chinese subset, Situational Adaptation task, Gemini Audio fails on 67 out of 190 samples, of which <b>a substantial portion (43.3%) stems from</b> <br>
+                <b>overlooking paralinguistic information embedded in the user's speech.</b><br>
                 These results highlight the current gap in capturing paralinguistic nuances beyond mere linguistic content.
               </p>
             </div>
