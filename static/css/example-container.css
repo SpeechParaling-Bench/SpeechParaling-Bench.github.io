@@ -233,11 +233,38 @@ audio::-webkit-media-controls-panel {
     font-weight: 600;
     color: #334155;
     white-space: nowrap;
-    min-width: 140px;
+    min-width: 180px;
+    width: 180px;
+    text-align: center;
     background: #f1f5f9;
     padding: 0.25rem 0.6rem;
     border-radius: 999px;
     border: 1px solid #e5e7eb;
+}
+
+.model-intro {
+    font-size: 0.75rem;
+    color: #64748b;
+    margin: 0.8rem 0;
+    padding: 0.6rem 0.8rem;
+    background: #f8fafc;
+    border-left: 3px solid #94a3b8;
+    border-radius: 0 6px 6px 0;
+}
+
+.model-intro-label {
+    font-weight: 700;
+    color: #475569;
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.model-intro-text {
+    font-style: italic;
+    color: #64748b;
 }
 
 .model-audio-row audio {

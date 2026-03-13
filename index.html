@@ -412,11 +412,9 @@
                         </div>
                         <div class="ex-body">
                             <div class="ex-label">Prompt</div>
-                            <p class="ex-text">请用青年的声音，抑扬顿挫的节奏，热情地说：欢迎新同学加入我们社团，希望大家玩得开心！</p>
+                            <p class="ex-text">请用活泼搞怪的声音说: 嘿，瞧我新学的这个小魔术！等下变没了你的零食可别哭鼻子哦！</p>
                             <div class="ex-dimensions-row">
-                                <span class="dim-tag">Age: Youth</span>
-                                <span class="dim-tag">Rhythm: Emphatic</span>
-                                <span class="dim-tag">Attitude: Enthusiastic</span>
+                                <span class="dim-tag">Style: Lively and Mischievous</span>
                             </div>
                             <div class="ex-audio-section">
                                 <div class="audio-player">
@@ -425,6 +423,10 @@
                                         <span>Multi-dimensional Control</span>
                                     </div>
                                     <audio controls src="static/audio/para-con-zh-1.wav"></audio>
+                                </div>
+                                <div class="model-intro">
+                                    <span class="model-intro-label">System Prompt</span>
+                                    <span class="model-intro-text">Directly speak the user's requested sentence in the specified tone without any prefix.</span>
                                 </div>
                                 <div class="model-output-box">
                                     <div class="model-output-header">
@@ -442,6 +444,14 @@
                                         <span class="model-label">Gemini Audio</span>
                                         <audio controls src="static/audio/para-con-zh-gemini.wav"></audio>
                                     </div>
+                                    <div class="model-audio-row">
+                                        <span class="model-label">Qwen3-Omni-Flash</span>
+                                        <audio controls src="static/audio/para-con-zh-qwen.wav"></audio>
+                                    </div>
+                                    <div class="model-audio-row">
+                                        <span class="model-label">Qwen3-Omni-Realtime</span>
+                                        <audio controls src="static/audio/para-con-zh-qwenrt.wav"></audio>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -454,11 +464,9 @@
                         </div>
                         <div class="ex-body">
                             <div class="ex-label">Prompt</div>
-                            <p class="ex-text">Please read this sentence with a youthful voice, an emphatic rhythm, and an enthusiastic tone: 'Welcome new students to our club! Hope everyone has a great time!'</p>
+                            <p class="ex-text">Please read this sentence with a lively and mischievous voice: 'Hey, check out this new magic trick I learned! Don't cry if your snacks disappear later, okay?'</p>
                             <div class="ex-dimensions-row">
-                                <span class="dim-tag">Age: Youth</span>
-                                <span class="dim-tag">Rhythm: Emphatic</span>
-                                <span class="dim-tag">Attitude: Enthusiastic</span>
+                                <span class="dim-tag">Style: Lively and Mischievous</span>
                             </div>
                             <div class="ex-audio-section">
                                 <div class="audio-player">
@@ -467,6 +475,10 @@
                                         <span>Multi-dimensional Control</span>
                                     </div>
                                     <audio controls src="static/audio/para-con-en-1.wav"></audio>
+                                </div>
+                                <div class="model-intro">
+                                    <span class="model-intro-label">System Prompt</span>
+                                    <span class="model-intro-text">Directly speak the user's requested sentence in the specified tone without any prefix.</span>
                                 </div>
                                 <div class="model-output-box">
                                     <div class="model-output-header">
@@ -484,6 +496,14 @@
                                         <span class="model-label">Gemini Audio</span>
                                         <audio controls src="static/audio/para-con-en-gemini.wav"></audio>
                                     </div>
+                                    <div class="model-audio-row">
+                                        <span class="model-label">Qwen3-Omni-Flash</span>
+                                        <audio controls src="static/audio/para-con-en-qwen.wav"></audio>
+                                    </div>
+                                    <div class="model-audio-row">
+                                        <span class="model-label">Qwen3-Omni-Realtime</span>
+                                        <audio controls src="static/audio/para-con-en-qwenrt.wav"></audio>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -499,18 +519,22 @@
                         </div>
                         <div class="ex-body">
                             <div class="ex-label">Prompt</div>
-                            <p class="ex-text">请先用极低音开始，然后逐渐转变为中音说: '你看，那是什么？原来是只小猫在草丛里玩耍，真可爱。'</p>
+                            <p class="ex-text">请先用喊叫开始，然后逐渐减弱到耳语说: 我不要吃这个！我讨厌青菜！可是妈妈说吃了才能长高高。</p>
                             <div class="ex-dimensions-row">
-                                <span class="dim-tag">Feature: Pitch</span>
-                                <span class="dim-tag">Transition: Low → Medium</span>
+                                <span class="dim-tag">Feature: Volume</span>
+                                <span class="dim-tag">Transition: Shouting → Whisper</span>
                             </div>
                             <div class="ex-audio-section">
                                 <div class="audio-player">
                                     <div class="player-info">
                                         <i class="fas fa-wave-square"></i>
-                                        <span>Dynamic Pitch Shift</span>
+                                        <span>Dynamic Volume Change</span>
                                     </div>
                                     <audio controls src="static/audio/dyn-var-zh-1.wav"></audio>
+                                </div>
+                                <div class="model-intro">
+                                    <span class="model-intro-label">System Prompt</span>
+                                    <span class="model-intro-text">Directly speak the user's requested sentence in the specified tone without any prefix.</span>
                                 </div>
                                 <div class="model-output-box">
                                     <div class="model-output-header">
@@ -528,6 +552,14 @@
                                         <span class="model-label">Gemini Audio</span>
                                         <audio controls src="static/audio/dyn-var-zh-gemini.wav"></audio>
                                     </div>
+                                    <div class="model-audio-row">
+                                        <span class="model-label">Qwen3-Omni-Flash</span>
+                                        <audio controls src="static/audio/dyn-var-zh-qwen.wav"></audio>
+                                    </div>
+                                    <div class="model-audio-row">
+                                        <span class="model-label">Qwen3-Omni-Realtime</span>
+                                        <audio controls src="static/audio/dyn-var-zh-qwenrt.wav"></audio>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -540,18 +572,22 @@
                         </div>
                         <div class="ex-body">
                             <div class="ex-label">Prompt</div>
-                            <p class="ex-text">Please read this sentence starting with a very low pitch and gradually transitioning to a medium pitch: 'Look, what's that? It's just a small cat playing in the grass, so cute.'</p>
+                            <p class="ex-text">Please read this sentence starting with a shouting manner and gradually decreasing the volume to a whisper: 'I don't want to eat this! I hate vegetables! But Mommy said I need to eat them to grow tall.'</p>
                             <div class="ex-dimensions-row">
-                                <span class="dim-tag">Feature: Pitch</span>
-                                <span class="dim-tag">Transition: Low → Medium</span>
+                                <span class="dim-tag">Feature: Volume</span>
+                                <span class="dim-tag">Transition: Shouting → Whisper</span>
                             </div>
                             <div class="ex-audio-section">
                                 <div class="audio-player">
                                     <div class="player-info">
                                         <i class="fas fa-wave-square"></i>
-                                        <span>Dynamic Pitch Shift</span>
+                                        <span>Dynamic Volume Change</span>
                                     </div>
                                     <audio controls src="static/audio/dyn-var-en-1.wav"></audio>
+                                </div>
+                                <div class="model-intro">
+                                    <span class="model-intro-label">System Prompt</span>
+                                    <span class="model-intro-text">Directly speak the user's requested sentence in the specified tone without any prefix.</span>
                                 </div>
                                 <div class="model-output-box">
                                     <div class="model-output-header">
@@ -569,6 +605,14 @@
                                         <span class="model-label">Gemini Audio</span>
                                         <audio controls src="static/audio/dyn-var-en-gemini.wav"></audio>
                                     </div>
+                                    <div class="model-audio-row">
+                                        <span class="model-label">Qwen3-Omni-Flash</span>
+                                        <audio controls src="static/audio/dyn-var-en-qwen.wav"></audio>
+                                    </div>
+                                    <div class="model-audio-row">
+                                        <span class="model-label">Qwen3-Omni-Realtime</span>
+                                        <audio controls src="static/audio/dyn-var-en-qwenrt.wav"></audio>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -584,8 +628,9 @@
                         </div>
                         <div class="ex-body">
                             <div class="ex-label">Prompt</div>
-                            <p class="ex-text">我不想睡觉，我想看电视，就再看五分钟嘛！</p>
+                            <p class="ex-text">我不敢一个人睡，天太黑了，我害怕有坏人。</p>
                             <div class="ex-dimensions-row">
+                                <span class="dim-tag">Emotion: Fear</span>
                                 <span class="dim-tag">Age: Child</span>
                             </div>
                             <div class="ex-audio-section">
@@ -595,6 +640,10 @@
                                         <span>Empathetic Generation</span>
                                     </div>
                                     <audio controls src="static/audio/sit-ada-zh-1.wav"></audio>
+                                </div>
+                                <div class="model-intro">
+                                    <span class="model-intro-label">System Prompt</span>
+                                    <span class="model-intro-text">You're a great conversationalist, please chat with users in an appropriate tone and keep responses concise and to the point.</span>
                                 </div>
                                 <div class="model-output-box">
                                     <div class="model-output-header">
@@ -612,6 +661,14 @@
                                         <span class="model-label">Gemini Audio</span>
                                         <audio controls src="static/audio/sit-ada-zh-gemini.wav"></audio>
                                     </div>
+                                    <div class="model-audio-row">
+                                        <span class="model-label">Qwen3-Omni-Flash</span>
+                                        <audio controls src="static/audio/sit-ada-zh-qwen.wav"></audio>
+                                    </div>
+                                    <div class="model-audio-row">
+                                        <span class="model-label">Qwen3-Omni-Realtime</span>
+                                        <audio controls src="static/audio/sit-ada-zh-qwenrt.wav"></audio>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -624,8 +681,9 @@
                         </div>
                         <div class="ex-body">
                             <div class="ex-label">Prompt</div>
-                            <p class="ex-text">I don't want to sleep, I want to watch TV, just five more minutes!</p>
+                            <p class="ex-text">I don't dare to sleep alone, it's too dark, I'm afraid of bad guys.</p>
                             <div class="ex-dimensions-row">
+                                <span class="dim-tag">Emotion: Fear</span>
                                 <span class="dim-tag">Age: Child</span>
                             </div>
                             <div class="ex-audio-section">
@@ -635,6 +693,10 @@
                                         <span>Empathetic Generation</span>
                                     </div>
                                     <audio controls src="static/audio/sit-ada-en-1.wav"></audio>
+                                </div>
+                                <div class="model-intro">
+                                    <span class="model-intro-label">System Prompt</span>
+                                    <span class="model-intro-text">You're a great conversationalist, please chat with users in an appropriate tone and keep responses concise and to the point.</span>
                                 </div>
                                 <div class="model-output-box">
                                     <div class="model-output-header">
@@ -651,6 +713,14 @@
                                     <div class="model-audio-row">
                                         <span class="model-label">Gemini Audio</span>
                                         <audio controls src="static/audio/sit-ada-en-gemini.wav"></audio>
+                                    </div>
+                                    <div class="model-audio-row">
+                                        <span class="model-label">Qwen3-Omni-Flash</span>
+                                        <audio controls src="static/audio/sit-ada-en-qwen.wav"></audio>
+                                    </div>
+                                    <div class="model-audio-row">
+                                        <span class="model-label">Qwen3-Omni-Realtime</span>
+                                        <audio controls src="static/audio/sit-ada-en-qwenrt.wav"></audio>
                                     </div>
                                 </div>
                             </div>
